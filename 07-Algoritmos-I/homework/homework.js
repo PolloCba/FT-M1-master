@@ -6,7 +6,17 @@ function factorear(num) {
   // los factores por los cuales se va dividiendo a dicho número (De menor a mayor)
   // Ej: factorear(180) --> [1, 2, 2, 3, 3, 5] Ya que 1x2x2x3x3x5 = 180 y son todos números primos
   // Tu código:
-
+  let result = [1]
+  let aux = 2;
+  while(num > 1){
+    if(num % aux === 0){
+      result.push(aux);
+      num /= aux;
+    }else{
+      aux++
+    }
+  }
+  return result;
 }
 
 function bubbleSort(array) {
@@ -14,7 +24,16 @@ function bubbleSort(array) {
   // el array recibido como parámetro
   // Devolver el array ordenado resultante
   // Tu código:
-
+  for(let i = 0; i < array.length-1; i++){
+    for(let j = 0; j < array.length-1; j++){
+      if(array[j] > array[j+1]){
+        let aux = array[j];
+        array[j] = array[j+1];
+        array[j+1] = aux;
+      }
+    } 
+  }
+  return array;
 }
 
 
@@ -24,6 +43,17 @@ function insertionSort(array) {
   // Devolver el array ordenado resultante
   // Tu código:
 
+  for(let i = 1; i < array.length; i++){
+    let j = i;
+    let aux = array[i];
+    while (j >= 0 && array[j-1] > aux){
+      array[j] = array[j-1];
+      j--;
+    }
+    array[j] = aux;
+  }
+
+  return array;
 }
 
 
@@ -32,7 +62,19 @@ function selectionSort(array) {
   // el array recibido como parámetro utilizando dos arreglos
   // Devolver el array ordenado resultante
   // Tu código:
-
+  for (let i = 0; i < array.length; i++) {
+    let min = array[i]
+    let minIndex = i
+    for (let j = i; j < array.length; j++) {
+      if (array[j] < min) {
+        min = array[j]
+        minIndex = j
+      }
+    }
+    array[minIndex] = array[i]
+    array[i] = min
+  }
+  return array
 }
 
 

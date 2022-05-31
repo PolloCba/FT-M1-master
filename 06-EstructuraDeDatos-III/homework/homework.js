@@ -60,8 +60,6 @@ BinarySearchTree.prototype.contains = function(value){
         return false;
       }
       return this.left.contains(value);
-    }else{
-      return false;
     }
   }
 }
