@@ -83,7 +83,7 @@ expect(tree.size()).toBe(3);
   });
 
   // ventaja obvia: valores son procesados respetando su orden lógico
-  it('corre depth-first (en recorrido "in-order") cuando depthFirstForEach() es ejecutado sin ninguna opcion o con la opcion "in-order"', function() {
+ it('corre depth-first (en recorrido "in-order") cuando depthFirstForEach() es ejecutado sin ninguna opcion o con la opcion "in-order"', function() {
     valuesToInsert.forEach(function(value){
         tree.insert(value);
     });
