@@ -6,7 +6,7 @@ function quickSort(array) {
   // el array recibido como parámetro
   // Devolver el array ordenado resultante
   // Tu código:
-  if (array.length < 1) {
+  if (array.length <= 1) {
     return array;
   }
 
